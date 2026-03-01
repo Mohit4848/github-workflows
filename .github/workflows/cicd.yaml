@@ -10,11 +10,20 @@ jobs:
       - name: code
         run: echo "code cloned"
 
+  build:
+    runs-on: ubuntu-latest
+    steps:
       - name: build
         run: echo "Code has been built"
 
+  test:
+    runs-on: ubuntu-latest
+    steps:
       - name: Test
         run: echo "Code has been tested"
 
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
       - name: Deploy
         run: echo "Code has been deployed"
