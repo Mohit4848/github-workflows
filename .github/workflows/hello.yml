@@ -12,3 +12,6 @@ jobs:
 
       - name: say hello to username
         run: echo "Hello $USER"
+
+      - name: pipeline break
+        run: exit 1
