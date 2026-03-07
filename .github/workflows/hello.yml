@@ -1,0 +1,17 @@
+name: hello
+
+on:
+  workflow_dispatch: 
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello
+        run: echo "Hello"
+
+      - name: say hello to username
+        run: echo "Hello $USER"
+
+      - name: break pipeline
+        run: exit 1
