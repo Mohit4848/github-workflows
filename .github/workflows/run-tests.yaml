@@ -10,6 +10,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Show current directory
+        run: pwd
+
+      - name: List files in repository
+        run: ls -la
+
       - name: Make script executable
         run: chmod +x test_script.sh
 
