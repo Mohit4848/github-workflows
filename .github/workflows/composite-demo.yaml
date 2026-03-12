@@ -1,0 +1,17 @@
+name: Composite Action Demo
+
+on: push
+
+jobs:
+
+  greet:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Use custom action
+        uses: ./.github/actions/setup-and-greet
+        with:
+          name: Mohit
+          language: en

@@ -1,0 +1,39 @@
+name: Setup and Greet
+
+description: Custom greeting action
+
+inputs:
+  name:
+    required: true
+
+  language:
+    required: false
+    default: en
+
+outputs:
+  greeted:
+    description: Greeting completed
+
+runs:
+  using: composite
+
+  steps:
+
+    - name: Greeting
+      shell: bash
+      run: |
+        if [ "${{ inputs.language }}" == "en" ]; then
+          echo "Hello ${{ inputs.name }}"
+        else
+          echo "Hola ${{ inputs.name }}"
+        fi
+
+    - name: Print system info
+      shell: bash
+      run: |
+        echo "Runner OS: $RUNNER_OS"
+        date
+
+    - name: Set output
+      shell: bash
+      run: echo "greeted=true" >> $GITHUB_OUTPUT
